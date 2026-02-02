@@ -3,6 +3,17 @@ body {
     background-color: white;
 }
 
-link {
-    background: default;
+p {
+    border-bottom: dotted red 50px;
+    border-top: dashed blue 10px;
+    border-left: dotted yellow 50px;
+    border-right: dashed green 10px;
+}
+
+.Contact-Page {
+    background-color: green;
+}
+
+.Contact-Page p {
+    color: lightgreen;
 }
