@@ -1,0 +1,21 @@
+body {
+    background-color: #F2DFD7;
+    /*https: //coolors.co/f2dfd7*/
+    color: #D4C1EC;
+    /*https: //coolors.co/d4c1ec*/
+    font-family: "sans-serif";
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #FEF9FF;
+    /*https: //coolors.co/fef9ff*/
+    color: #9F9FED;
+    /*https: //coolors.co/9f9fed*/
+}
+
+h1 {
+    font-family: "SN Pro", "Google Sans";
+
+}

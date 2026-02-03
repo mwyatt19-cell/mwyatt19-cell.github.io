@@ -1,0 +1,20 @@
+body {
+    background-color: #EAD7D1;
+    /*https: //coolors.co/ead7d1*/
+    color: #7B506F;
+    /*https: //coolors.co/7b506f*/
+    font-family: "sans-serif";
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #DBCDC6;
+    /*https: //coolors.co/dbcdc6*/
+    color: #DD99BB;
+    /*https: //coolors.co/dd99bb*/
+}
+
+h1 {
+    font-family: "Roboto", "serif";
+}
