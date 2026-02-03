@@ -19,3 +19,28 @@ h1 {
     font-family: "SN Pro", "Google Sans";
 
 }
+
+nav .Primary-Menu {
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+
+}
+
+li a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 25px;
+    background-color: aliceblue;
+
+}
