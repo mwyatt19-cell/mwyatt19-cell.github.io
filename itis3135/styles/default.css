@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #FEF9FF;
+    background-color: #ecd8cd;
     /*https: //coolors.co/fef9ff*/
     color: #9F9FED;
     /*https: //coolors.co/9f9fed*/
@@ -41,6 +41,6 @@ li a {
     text-align: center;
     display: block;
     padding: 25px;
-    background-color: aliceblue;
+
 
 }
