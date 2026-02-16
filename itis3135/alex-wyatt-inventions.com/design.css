@@ -1,0 +1,27 @@
+header {
+    background-color: #F08080;
+    font-family: Lato, sans-serif;
+}
+
+main {
+    background-color: #F4978E;
+}
+
+body {
+    background-color: #FBC4AB;
+    color: #FEFEFA;
+    font-family: arial;
+}
+
+footer {
+    background-color: #F8AD9D;
+}
+
+h1 {
+    background-color: #FFDAB9;
+}
+
+img {
+    width: 20%;
+
+}
