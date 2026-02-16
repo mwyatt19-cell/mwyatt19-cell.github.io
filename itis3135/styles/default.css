@@ -1,46 +1,42 @@
 body {
-    background-color: #F2DFD7;
-    /*https: //coolors.co/f2dfd7*/
-    color: #5c407d;
-    /*https: //coolors.co/d4c1ec*/
-    font-family: "sans-serif";
-    max-width: 900px;
-    margin: 0 auto;
+  background-color: #f2dfd7;
+  /*https: //coolors.co/f2dfd7*/
+  color: #5c407d;
+  /*https: //coolors.co/d4c1ec*/
+  font-family: "sans-serif";
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 header {
-    background-color: #e7d9eb;
-    /*https: //coolors.co/fef9ff*/
-    color: #330522;
-    /*https: //coolors.co/9f9fed*/
+  background-color: #e7d9eb;
+  /*https: //coolors.co/fef9ff*/
+  color: #330522;
+  /*https: //coolors.co/9f9fed*/
 }
 
 h1 {
-    font-family: "SN Pro", "Google Sans";
-
+  font-family: "SN Pro", "Google Sans";
 }
 
 nav .Primary-Menu {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 li {
-    float: left;
-
+  float: left;
 }
 
 li a {
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    padding: 25px;
-
-
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 25px;
 }
