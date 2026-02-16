@@ -1,27 +1,26 @@
 header {
-    background-color: #F08080;
-    font-family: Lato, sans-serif;
+  background-color: #f08080;
+  font-family: Lato, sans-serif;
 }
 
 main {
-    background-color: #F4978E;
+  background-color: #f4978e;
 }
 
 body {
-    background-color: #FBC4AB;
-    color: #FEFEFA;
-    font-family: arial;
+  background-color: #fbc4ab;
+  color: #e5e5c8;
+  font-family: arial;
 }
 
 footer {
-    background-color: #F8AD9D;
+  background-color: #f8ad9d;
 }
 
 h1 {
-    background-color: #FFDAB9;
+  background-color: #ffdab9;
 }
 
 img {
-    width: 20%;
-
+  width: 20%;
 }
