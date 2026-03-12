@@ -1,0 +1,28 @@
+section header,
+header {
+  font-family: "Agu Display", serif;
+}
+* {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+@media (min-width: 768px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+
+    background-color: whitesmoke;
+  }
+  #navbar a {
+    padding: 45px;
+    font-size: 1.2rem;
+    border: 2px dotted gray;
+  }
+  #main-doc {
+    margin-left: 250px;
+    padding: 5px;
+  }
+}
