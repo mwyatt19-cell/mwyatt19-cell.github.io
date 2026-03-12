@@ -10,132 +10,121 @@
   </head>
   <body>
     <nav id="navbar">
-      <header>Topic of technical documentation</header>
-      <a class="nav-link" href="#topic_one">Topic One</a>
-      <a class="nav-link" href="#topic_two">Topic Two</a>
-      <a class="nav-link" href="#topic_three">Topic Three</a>
-      <a class="nav-link" href="#topic_four">Topic Four</a>
-      <a class="nav-link" href="#topic_five">Topic Five</a>
+      <header>Technical documentation-Make an Ocean Themed Page</header>
+      <a class="nav-link" href="#topic_one">Step One</a>
+      <a class="nav-link" href="#topic_two">Step Two</a>
+      <a class="nav-link" href="#topic_three">Step Three</a>
+      <a class="nav-link" href="#topic_four">Step Four</a>
+      <a class="nav-link" href="#topic_five">Step Five</a>
     </nav>
     <main id="main-doc">
       <section class="main-section" id="topic_one">
-        <header>Topic One</header>
+        <header>Step One</header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         Welcome to making your first ocean themed web page! We are going to be using a mix of HTML and CSS.
+         First, we will make a basic webpage to add designs onto.
+         <ol>
+          <li>Open an IDE such as Visual Studio Code</li>
+          <li>Create a new HTML file</li>
+          <li> Acess the boilerplate using the ! Emmet Abbrieviation and hit enter</li>
+         </ol>
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Now that you have the base frame for your website, use a loren ipsum generator
+          to add some text to your webpage. This will give you a better idea of how the design will look with text on it.
         </p>
-        <code></code>
+      
       </section>
       <section class="main-section" id="topic_two">
-        <header>Topic Two</header>
+        <header>Step Two</header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         Now that you have the basic webpage set up, we can start adding some design elements to make it look more ocean themed. We will be using CSS to add colors, fonts, and images to our webpage.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <code></code>
+First, lets change the background color of our webpage to represent the ocean. We can add in a generic color, like blue, add the hex code of a color, or use hsl(hue, saturation, lightness) to get the exact color you want.
+<pre>
+        <code>
+          *
+          {
+            background-color: blue;
+          }
+        </code>
+        </pre>
+        <pre>
+        <code>
+           *
+          {
+            background-color: #00b4d8;
+          }
+        </code>
+      </pre>
+        <pre>
+         <code>
+           *
+          {
+            background-color: hsl(240, 80%,  80%);
+          }
+        </code>
+        </pre>
       </section>
       <section class="main-section" id="topic_three">
-        <header>Topic Three</header>
+        <header>Step Three</header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         Now that we have ocean-like background-color, lets change the font color to match our theme, while agreeing with the WCAG guidelines for accessibility. We can use the same color methods as before to change the font color.
+         We can use a program like Coolors and use the Contrast Checker to find colors that match our theme and are accessible.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         Remember, the minimum contrast ratio for normal text is 4.5:1, and for large text is 3:1. Large text is defined as 18pt and above, or 14pt and above if it is bold.
         </p>
-        <code></code>
+        <pre>
+        <code>
+          *
+          {
+            background-color:#00B4D8;
+            color:##000732;
+          }
+        </code>
+        </pre>
       </section>
       <section class="main-section" id="topic_four">
-        <header>Topic Four</header>
+        <header>Step Four</header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         We have the background color and font color. Now, what about the actual font of our text? Using a program such as Google Fonts, we can find free fonts to use on our webpage. We can search for fonts that match our theme, and then add the link to the font in our HTML file, and then use the font-family property in CSS to apply the font to our text.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <ul>
-          <li>Lorem ipsum dolor sit amet consectetur adipiscing elit.</li>
-          <li>Consectetur adipiscing elit quisque faucibus ex sapien vitae.</li>
-        </ul>
-        <code></code>
+          For your heading, using a Serif font, and for the rest of the text, using a Sans Serif font to create a nice contrast between the two. Don't forget to import the fonts into your HTMl Code as well!
+      
+          <pre>
+        <code>
+          header
+            {
+              font-family: "Maiden Orange", serif;
+            }
+    
+          *
+          {
+            font-family: "Keania One", sans-serif;
+          }
+
+        </code>
+        </pre>
       </section>
       <section class="main-section" id="topic_five">
-        <header>Topic Five</header>
+        <header>Step Five</header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+         Now lets tackle some formatting to ensure our code stays readable for later. Below is a list of guidelines and steps to check on your code.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <code></code>
+
         <ul>
-          <li>Ex sapien vitae pellentesque sem placerat in id.</li>
-          <li>Placerat in id cursus mi pretium tellus duis</li>
-          <li>Pretium tellus duis convallis tempus leo eu aenean.</li>
+          <li>Does the name of your HTML File make sense?</li>
+          <li>Does the name of your CSS File make sense?</li>
+          <li>Has the CSS file been linked to your HTML Document?</li>
+          <li> Does your code meet WCAG guidelines?</li>
+          <li>Is your code formatted/indented correctly (tools such as Prettier are helpful to ensure correct formatting)?</li>
         </ul>
+        <p>
+         Now you have a basic ocean themed webpage! You can continue to add more design elements, such as images, animations, and more to make it your own. Don't forget to test your webpage on different devices and browsers to ensure it looks good and functions properly for all users.
+        </p>
       </section>
     </main>
   </body>
