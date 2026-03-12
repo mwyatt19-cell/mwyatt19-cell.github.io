@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,73 +7,74 @@
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../styles/default.css" />
   </head>
 
   <body>
-   <h1 id="title">Page Title</h1>
-    <p id="description">Here is the page description</p>
-  
+    <h1 id="title">Contact Form</h1>
+    <p id="description">
+      Feel free to add your email to ask any ocean-related questions, or to
+      receive updates whenever our site is updated!
+    </p>
+
     <form id="survey-form">
+      <label for="name" id="name-label">Enter your name: </label>
+      <input id="name" type="text" placeholder="Jane M Doe" required />
 
-      <label 
-      for="text"          id="name-label"
-      >Name</label>
-      <input 
-      id="name" 
-      type="text"
-     placeholder="Jane M Doe"
-     required/>
-
-      <label 
-      for="email" 
-      id="email-label"> 
-      Email</label>
+      <label for="email" id="email-label">Enter your email: </label>
+      <input id="email" type="email" placeholder="example@email.com" required />
+      <label for="number" id="number-label">Enter your phone number: </label>
       <input
-       id="email" 
-       type="email"
-       placeholder="example@email.com"/
-       required >
-        <label 
-      for="number" 
-      id="number-label"> 
-      Number</label>
-      <input
-       id="number" 
-       type="number"
-       placeholder=1234567890
-       required
-       min="0" 
-       max="9999999999">
-      <select
-      id="dropdown">
-      <option> Yes</option>
-      <option> No</option>
+        id="number"
+        type="number"
+        placeholder="1234567890"
+        required
+        min="0"
+        max="9999999999"
+      />
+      <select id="dropdown">
+        <option>Yes, join email list</option>
+        <option>No, don't join email list</option>
       </select>
 
+      <fieldset>
+        <legend>
+          Interested in receiving mail about ongoing beach cleanup programs
+          throughout the USA?
+        </legend>
+        <label for="of-course">Of Course</label>
+        <input
+          id="of-course"
+          type="radio"
+          value="ofCourse"
+          name="form question"
+        />
 
-     <fieldset>
-       <legend>Answer Question</legend>
-       <label for="of-course">Of Course</label>
-       <input id="of-course" type="radio" value="ofCourse" name="form question"/>
-
-      <label for="no-way">No Way</label>
-    <input id="no-way" type="radio" value="noWay" name="form question"/>
+        <label for="no-way">No Way</label>
+        <input id="no-way" type="radio" value="noWay" name="form question" />
       </fieldset>
-    <legend> Checkbox Question</legend>
-    <label for="in-a-group">In a group</label>
-    <input
-    id="in-a-group"
-    type="checkbox"
-    name="in-a-group"
-    value="in-a-group"/>
-     <label for="alone">Alone</label>
-    <input
-    id="alone"
-    type="checkbox"
-    name="alone"
-    value="in-a-group"/>
-  <textarea ></textarea>
-   <button id="submit">Submit</button>
+      <fieldset>
+        <legend>
+          Would you like to receive information on coral-safe sunscreen brands?
+          Do you have any questions for us?
+        </legend>
+        <label for="yes-please">Yes please</label>
+        <input
+          id="yes-please"
+          type="checkbox"
+          name="yes-please"
+          value="yes-please"
+        />
+        <label for="no-thanks">No thanks</label>
+        <input
+          id="no-thanks"
+          type="checkbox"
+          name="no-thanks"
+          value="no-thanks"
+        />
+        <textarea></textarea>
+        <button id="submit">Submit</button>
+      </fieldset>
     </form>
   </body>
 </html>

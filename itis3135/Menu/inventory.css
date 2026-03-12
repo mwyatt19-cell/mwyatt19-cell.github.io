@@ -9,37 +9,34 @@ tr[class="to-read"] {
 tr[class="in-progress"] {
   background-image: linear-gradient(to right, #edf6f9, #83c5be);
 }
-/*----------------------------------
-*/
+
 span {
   display: inline-block;
 }
 
 tr[class="read"] span[class="status"] {
+  background-image: radial-gradient(#0081a7, #00afb9);
   border: 2px solid whitesmoke;
   border-radius: 8px;
-  background-image: radial-gradient(#0081a7, #00afb9);
 }
 
 tr[class="to-read"] span[class="status"] {
+  background-image: radial-gradient(#fed9b7, #f07167);
   border: 2px solid whitesmoke;
   border-radius: 8px;
-  background-image: radial-gradient(#fed9b7, #f07167);
 }
 
 tr[class="in-progress"] span[class="status"] {
+  background-image: radial-gradient(#c7eaf5, #4c9890);
   border: 2px solid whitesmoke;
   border-radius: 8px;
-  background-image: radial-gradient(#c7eaf5, #4c9890);
 }
 
-/*-----------------------------------*/
 span[class="status"],
 span[class^="rate"] {
-  display: flex;
-  height: 20px;
   width: 85%;
-  padding: 2px;
+  height: 100%;
+  padding: 5%;
 }
 
 span[class^="rate"] > span {
