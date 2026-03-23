@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Product Landing Page</title>
+     <link rel="stylesheet" href="styles/default.css" />
     <link rel="stylesheet" href="product.css" />
-    <link rel="stylesheet" href="../styles/default.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
     </style>
@@ -16,7 +16,7 @@
 
   <body>
     <header id="header">
-      <img id="header-img" src="../images/logo.jpeg" alt="walrus logo" />
+      <img id="header-img" src="images/logo.jpeg" alt="walrus logo" />
       <nav id="nav-bar">
         <ul>
           <li><a class="nav-link" href="#page1">Introduction </a></li>
@@ -27,7 +27,7 @@
     </header>
 
     <main>
-      <div data-include="../components/header.html"></div>
+      <!-- <div data-include="components/header.html"></div> -->
       <section id="page1">
         <h1>Adventurous Walrus Summer Camps</h1>
         <iframe
@@ -70,7 +70,7 @@
         </p>
       </section>
     </main>
-    <div data-include="../components/footer.html"></div>
-    <script src="../scripts/HTMLInclude.min.js"></script>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
   </body>
 </html>

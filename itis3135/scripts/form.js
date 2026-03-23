@@ -3,66 +3,10 @@
 // ===============================
 const form = document.getElementById("form");
 const output = document.getElementById("output");
-
-// Prevent default submit
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  handleSubmit();
-});
-
-// ===============================
-// CLEAR BUTTON (restore defaults/placeholders + courses)
-// ===============================
-const clearBtn = document.getElementById("clear-btn");
-
-clearBtn.addEventListener("click", function () {
-  // Reset input and textarea fields
-  const fields = document.querySelectorAll("form input, form textarea");
-  fields.forEach((field) => {
-    if (["button", "submit", "reset", "file"].includes(field.type)) return;
-    if (field.dataset.default) {
-      field.value = field.dataset.default;
-    } else {
-      field.value = "";
-    }
-  });
-
-  // Reset courses container to only the initial course input
-  const initialCourse = coursesContainer.querySelector("input[data-default]");
-  coursesContainer.innerHTML = "";
-  if (initialCourse) {
-    // Clone initial course to reset
-    const clonedCourse = initialCourse.cloneNode(true);
-    clonedCourse.value = clonedCourse.dataset.default; // restore default
-    coursesContainer.appendChild(clonedCourse);
-  }
-});
-
-// ===============================
-// ADD / REMOVE COURSES
-// ===============================
 const coursesContainer = document.getElementById("courses-container");
-const addCourseBtn = document.getElementById("add-course");
-
-addCourseBtn.addEventListener("click", function () {
-  const courseDiv = document.createElement("div");
-
-  courseDiv.innerHTML = `
-    <input type="text" placeholder="Enter course and reason" required>
-    <button type="button" class="delete-course">Delete</button>
-  `;
-
-  coursesContainer.appendChild(courseDiv);
-});
-
-coursesContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("delete-course")) {
-    e.target.parentElement.remove();
-  }
-});
 
 // ===============================
-// HANDLE SUBMIT
+// HANDLE SUBMIT FUNCTION
 // ===============================
 function handleSubmit() {
   const firstName = document.getElementById("first-name").value.trim();
@@ -96,21 +40,20 @@ function handleSubmit() {
   const quote = document.getElementById("quote").value.trim();
   const author = document.getElementById("quote-author").value.trim();
 
+  const courseInputs = coursesContainer.querySelectorAll("input");
+  let coursesHTML = "";
+  courseInputs.forEach((course) => {
+    if (course.value.trim() !== "") {
+      coursesHTML += `<li>${course.value.trim()}</li>`;
+    }
+  });
   const links = [
     document.getElementById("clt-web").value.trim(),
     document.getElementById("github-io").value.trim(),
     document.getElementById("github").value.trim(),
     document.getElementById("free-code-camp").value.trim(),
     document.getElementById("linked-in").value.trim(),
-  ];
-
-  const courseInputs = coursesContainer.querySelectorAll("input");
-  let coursesHTML = "";
-  courseInputs.forEach((course) => {
-    if (course.value.trim() !== "")
-      coursesHTML += `<li>${course.value.trim()}</li>`;
-  });
-
+  ]; // <- no trailing comma here
   const imageInput = document.getElementById("image");
   let imageURL = "";
   if (imageInput.files.length > 0) {
@@ -155,3 +98,51 @@ function handleSubmit() {
     location.reload();
   });
 }
+
+// ===============================
+// FORM SUBMIT EVENT
+// ===============================
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  handleSubmit();
+});
+
+// ===============================
+// CLEAR BUTTON
+// ===============================
+const clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", function () {
+  const fields = document.querySelectorAll("form input, form textarea");
+  fields.forEach((field) => {
+    if (["button", "submit", "reset", "file"].includes(field.type)) return;
+    field.value = field.dataset.default || "";
+  });
+
+  // Reset courses container to only initial course
+  const initialCourse = coursesContainer.querySelector("input[data-default]");
+  coursesContainer.innerHTML = "";
+  if (initialCourse) {
+    const cloned = initialCourse.cloneNode(true);
+    cloned.value = cloned.dataset.default;
+    coursesContainer.appendChild(cloned);
+  }
+});
+
+// ===============================
+// ADD / REMOVE COURSES
+// ===============================
+const addCourseBtn = document.getElementById("add-course");
+addCourseBtn.addEventListener("click", function () {
+  const courseDiv = document.createElement("div");
+  courseDiv.innerHTML = `
+    <input type="text" placeholder="Enter course and reason" required>
+    <button type="button" class="delete-course">Delete</button>
+  `;
+  coursesContainer.appendChild(courseDiv);
+});
+
+coursesContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("delete-course")) {
+    e.target.parentElement.remove();
+  }
+});

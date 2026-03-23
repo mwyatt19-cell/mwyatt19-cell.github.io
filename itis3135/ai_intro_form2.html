@@ -8,6 +8,7 @@
       src="https://lint.page/kit/4d0fe3.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="styles/form.css" />
   </head>
 
   <body>
@@ -75,6 +76,8 @@
             value="ACW"
             data-default="ACW"
             placeholder="Initials"
+            maxlength="5"
+            class="small-input"
           />
 
           <label for="ack-date">Date:</label>
@@ -84,6 +87,18 @@
             required
             value="2026-01-12"
             data-default="2026-01-12"
+          />
+
+          <label for="divider">Divider:</label>
+          <input
+            id="divider"
+            type="text"
+            required
+            value="|"
+            data-default="|"
+            placeholder="Divider"
+            maxlength="5"
+            class="small-input"
           />
         </fieldset>
 
@@ -109,16 +124,6 @@
             value="Walrus"
             data-default="Walrus"
             placeholder="Animal"
-          />
-
-          <label for="divider">Divider:</label>
-          <input
-            id="divider"
-            type="text"
-            required
-            value="|"
-            data-default="|"
-            placeholder="Divider"
           />
         </fieldset>
 
@@ -157,43 +162,43 @@ I’m a junior at UNCC double majoring in Latin-American Studies...</textarea
           <legend>Background Info</legend>
 
           <label for="personal-bg">Personal Background:</label>
-          <input
+          <textarea
             id="personal-bg"
-            type="text"
             required
-            value="I’m a 19 year old..."
-            data-default="I’m a 19 year old..."
+            data-default="I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free."
             placeholder="Personal Background"
-          />
+          >
+I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free.</textarea
+          >
 
           <label for="professional-bg">Professional Background:</label>
-          <input
+          <textarea
             id="professional-bg"
-            type="text"
             required
-            value="I am a Co-LAB Navigator Intern..."
-            data-default="I am a Co-LAB Navigator Intern..."
+            data-default="I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600."
             placeholder="Professional Background"
-          />
+          >
+I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600.</textarea
+          >
 
           <label for="academic-bg">Academic Background:</label>
-          <input
+          <textarea
             id="academic-bg"
-            type="text"
             required
-            value="UNCC junior in LTAM..."
-            data-default="UNCC junior in LTAM..."
+            data-default="UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan."
             placeholder="Academic Background"
-          />
+          >
+UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan.</textarea
+          >
 
           <label for="subject-bg">Background in this Subject:</label>
           <textarea
             id="subject-bg"
             required
-            data-default="I have little experience in Web Development..."
+            data-default="I have little experience in Web Development, however I am taking this class to help facilitate my research."
             placeholder="Background in this Subject"
           >
-I have little experience in Web Development...</textarea
+I have little experience in Web Development, however I am taking this class to help facilitate my research.</textarea
           >
 
           <label for="primary-platform">Primary Work Computer:</label>
@@ -222,31 +227,28 @@ My backup computer is a loan computer from Atkins Library.</textarea
         <!-- Courses -->
         <fieldset>
           <legend>Courses</legend>
-
           <div id="courses-container">
             <input
               type="text"
-              value="ITIS3135 - Front-End..."
-              data-default="ITIS3135 - Front-End..."
+              value="ITIS3135- Front-End Web Application Development: Assist in my research knowledge."
+              data-default="ITIS3135- Front-End Web Application Development: Assist in my research knowledge."
               required
               placeholder="Course and Reason"
             />
           </div>
-
           <button type="button" id="add-course">Add Course</button>
         </fieldset>
 
         <!-- Quote -->
         <fieldset>
           <legend>Quote</legend>
-
           <label for="quote">Quote:</label>
           <input
             id="quote"
             type="text"
+            required
             value="We learn from failure, not from success!"
             data-default="We learn from failure, not from success!"
-            required
             placeholder="Quote"
           />
 
@@ -254,9 +256,9 @@ My backup computer is a loan computer from Atkins Library.</textarea
           <input
             id="quote-author"
             type="text"
+            required
             value="Bram Stoker"
             data-default="Bram Stoker"
-            required
             placeholder="Author"
           />
         </fieldset>
@@ -264,45 +266,44 @@ My backup computer is a loan computer from Atkins Library.</textarea
         <!-- Links -->
         <fieldset>
           <legend>Links</legend>
-
           <input
             id="clt-web"
             type="url"
+            required
             value="https://webpages.charlotte.edu/mwyatt19/"
             data-default="https://webpages.charlotte.edu/mwyatt19/"
-            required
             placeholder="CLT Web"
           />
           <input
             id="github-io"
             type="url"
+            required
             value="https://mwyatt19-cell.github.io/"
             data-default="https://mwyatt19-cell.github.io/"
-            required
             placeholder="GitHub Pages"
           />
           <input
             id="github"
             type="url"
+            required
             value="https://github.com/mwyatt19-cell/"
             data-default="https://github.com/mwyatt19-cell/"
-            required
             placeholder="GitHub"
           />
           <input
             id="free-code-camp"
             type="url"
+            required
             value="https://www.freecodecamp.org/alex12417093"
             data-default="https://www.freecodecamp.org/alex12417093"
-            required
             placeholder="FreeCodeCamp"
           />
           <input
             id="linked-in"
             type="url"
+            required
             value="https://www.linkedin.com/in/alex-wyatt-a95b69301"
             data-default="https://www.linkedin.com/in/alex-wyatt-a95b69301"
-            required
             placeholder="LinkedIn"
           />
         </fieldset>
@@ -310,7 +311,6 @@ My backup computer is a loan computer from Atkins Library.</textarea
         <!-- Optional Fields -->
         <fieldset>
           <legend>Extras</legend>
-
           <label for="funny">Funny/Interesting item (optional):</label>
           <input id="funny" type="text" placeholder="Funny/Interesting item" />
 

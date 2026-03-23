@@ -1,0 +1,32 @@
+/* Make small inputs under Acknowledgment smaller */
+input.small-input {
+  width: 80px;
+  max-width: 80px;
+  display: inline-block;
+}
+
+/* Make textareas large enough for generic sentence length */
+textarea {
+  width: 100%;
+  min-height: 3em;   /* 3 rows minimum */
+  padding: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;   /* allow vertical resize */
+}
+
+/* Optional: add spacing for clarity */
+fieldset {
+  margin-bottom: 1.5em;
+}
+
+label {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+input, textarea {
+  padding: 4px;
+  font-size: 1rem;
+}
