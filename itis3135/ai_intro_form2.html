@@ -1,338 +1,197 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction Form</title>
-    <script
-      src="https://lint.page/kit/4d0fe3.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles/form.css" />
-  </head>
 
-  <body>
-    <main>
-      <div data-include="components/header.html"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction Form</title>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
 
-      <h2>Introduction Form</h2>
-      <h3>Please submit the form below.</h3>
+<body>
+  <main>
+    <div data-include="components/header.html"></div>
 
-      <form id="form">
-        <!-- Basic Personal Information -->
-        <fieldset>
-          <legend>Basic Personal Information</legend>
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
 
-          <label for="first-name">First Name:</label>
-          <input
-            id="first-name"
-            type="text"
-            required
-            value="Alex"
-            data-default="Alex"
-            placeholder="First Name"
-          />
+    <form id="form">
+      <!-- Basic Personal Information -->
+      <fieldset>
+        <legend>Basic Personal Information</legend>
 
-          <label for="middle-name">Middle Name (optional):</label>
-          <input
-            id="middle-name"
-            type="text"
-            value="C"
-            data-default="C"
-            placeholder="Middle Name (optional)"
-          />
+        <label for="first-name">First Name:</label>
+        <input id="first-name" type="text" required value="Alex" data-default="Alex" placeholder="First Name" />
 
-          <label for="nickname">Nickname (optional):</label>
-          <input
-            id="nickname"
-            type="text"
-            value="Alex"
-            data-default="Alex"
-            placeholder="Nickname (optional)"
-          />
+        <label for="middle-name">Middle Name (optional):</label>
+        <input id="middle-name" type="text" value="C" data-default="C" placeholder="Middle Name (optional)" />
 
-          <label for="last-name">Last Name:</label>
-          <input
-            id="last-name"
-            type="text"
-            required
-            value="Wyatt"
-            data-default="Wyatt"
-            placeholder="Last Name"
-          />
-        </fieldset>
+        <label for="nickname">Nickname (optional):</label>
+        <input id="nickname" type="text" value="Alex" data-default="Alex" placeholder="Nickname (optional)" />
 
-        <!-- Acknowledgement -->
-        <fieldset>
-          <legend>Acknowledgement</legend>
+        <label for="last-name">Last Name:</label>
+        <input id="last-name" type="text" required value="Wyatt" data-default="Wyatt" placeholder="Last Name" />
+      </fieldset>
 
-          <p>I understand that what I put here is publicly available...</p>
+      <!-- Acknowledgement -->
+      <fieldset>
+        <legend>Acknowledgement</legend>
 
-          <label for="acknowledgement">Initials:</label>
-          <input
-            id="acknowledgement"
-            type="text"
-            required
-            value="ACW"
-            data-default="ACW"
-            placeholder="Initials"
-            maxlength="5"
-            class="small-input"
-          />
+        <p>I understand that what I put here is publicly available...</p>
 
-          <label for="ack-date">Date:</label>
-          <input
-            id="ack-date"
-            type="date"
-            required
-            value="2026-01-12"
-            data-default="2026-01-12"
-          />
+        <label for="acknowledgement">Initials:</label>
+        <input id="acknowledgement" type="text" required value="ACW" data-default="ACW" placeholder="Initials"
+          maxlength="5" class="small-input" />
 
-          <label for="divider">Divider:</label>
-          <input
-            id="divider"
-            type="text"
-            required
-            value="|"
-            data-default="|"
-            placeholder="Divider"
-            maxlength="5"
-            class="small-input"
-          />
-        </fieldset>
+        <label for="ack-date">Date:</label>
+        <input id="ack-date" type="date" required value="2026-01-12" data-default="2026-01-12" />
 
-        <!-- Mascot -->
-        <fieldset>
-          <legend>Mascot</legend>
+        <label for="divider">Divider:</label>
+        <input id="divider" type="text" required value="|" data-default="|" placeholder="Divider" maxlength="5"
+          class="small-input" />
+      </fieldset>
 
-          <label for="adj">Adjective:</label>
-          <input
-            id="adj"
-            type="text"
-            required
-            value="Adventurous"
-            data-default="Adventurous"
-            placeholder="Adjective"
-          />
+      <!-- Mascot -->
+      <fieldset>
+        <legend>Mascot</legend>
 
-          <label for="animal">Animal:</label>
-          <input
-            id="animal"
-            type="text"
-            required
-            value="Walrus"
-            data-default="Walrus"
-            placeholder="Animal"
-          />
-        </fieldset>
+        <label for="adj">Adjective:</label>
+        <input id="adj" type="text" required value="Adventurous" data-default="Adventurous" placeholder="Adjective" />
 
-        <!-- Image -->
-        <fieldset>
-          <legend>Image</legend>
+        <label for="animal">Animal:</label>
+        <input id="animal" type="text" required value="Walrus" data-default="Walrus" placeholder="Animal" />
+      </fieldset>
 
-          <label for="image">Upload Image:</label>
-          <input id="image" type="file" accept="image/*" />
+      <!-- Image -->
+      <fieldset>
+        <legend>Image</legend>
 
-          <label for="caption">Caption:</label>
-          <input
-            id="caption"
-            type="text"
-            value="Me playing field hockey"
-            data-default="Me playing field hockey"
-            placeholder="Caption"
-          />
-        </fieldset>
+        <label for="image">Upload Image:</label>
+        <input id="image" type="file" accept="image/*" />
 
-        <!-- Personal Statement -->
-        <fieldset>
-          <legend>Personal Statement</legend>
-          <textarea
-            id="statement"
-            required
-            data-default="I’m a junior at UNCC double majoring in Latin-American Studies..."
-            placeholder="Personal Statement"
-          >
-I’m a junior at UNCC double majoring in Latin-American Studies...</textarea
-          >
-        </fieldset>
+        <label for="caption">Caption:</label>
+        <input id="caption" type="text" value="Me playing field hockey" data-default="Me playing field hockey"
+          placeholder="Caption" />
+      </fieldset>
 
-        <!-- Backgrounds -->
-        <fieldset>
-          <legend>Background Info</legend>
+      <!-- Personal Statement -->
+      <fieldset>
+        <legend>Personal Statement</legend>
+        <textarea id="statement" required
+          data-default="I’m a junior at UNCC double majoring in Latin-American Studies..."
+          placeholder="Personal Statement">
+I’m a junior at UNCC double majoring in Latin-American Studies...</textarea>
+      </fieldset>
 
-          <label for="personal-bg">Personal Background:</label>
-          <textarea
-            id="personal-bg"
-            required
-            data-default="I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free."
-            placeholder="Personal Background"
-          >
-I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free.</textarea
-          >
+      <!-- Backgrounds -->
+      <fieldset>
+        <legend>Background Info</legend>
 
-          <label for="professional-bg">Professional Background:</label>
-          <textarea
-            id="professional-bg"
-            required
-            data-default="I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600."
-            placeholder="Professional Background"
-          >
-I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600.</textarea
-          >
+        <label for="personal-bg">Personal Background:</label>
+        <textarea id="personal-bg" required
+          data-default="I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free."
+          placeholder="Personal Background">
+I’m a 19 year old from Raleigh NC, and I like to go in nature, play UNCC Club Field Hockey, and try new recipes when I’m free.</textarea>
 
-          <label for="academic-bg">Academic Background:</label>
-          <textarea
-            id="academic-bg"
-            required
-            data-default="UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan."
-            placeholder="Academic Background"
-          >
-UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan.</textarea
-          >
+        <label for="professional-bg">Professional Background:</label>
+        <textarea id="professional-bg" required
+          data-default="I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600."
+          placeholder="Professional Background">
+I am a Co-LAB Navigator Intern at UNCC, a T.A. for ITSC 2600, and a prior Preceptor for ITSC 1600.</textarea>
 
-          <label for="subject-bg">Background in this Subject:</label>
-          <textarea
-            id="subject-bg"
-            required
-            data-default="I have little experience in Web Development, however I am taking this class to help facilitate my research."
-            placeholder="Background in this Subject"
-          >
-I have little experience in Web Development, however I am taking this class to help facilitate my research.</textarea
-          >
+        <label for="academic-bg">Academic Background:</label>
+        <textarea id="academic-bg" required
+          data-default="UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan."
+          placeholder="Academic Background">
+UNCC junior in LTAM Studies/Computer Science, part of the CCI Honors College, a prior member of the CCI Learning Community, and currently conducting research with Dr. Yan.</textarea>
 
-          <label for="primary-platform">Primary Work Computer:</label>
-          <textarea
-            id="primary-platform"
-            required
-            data-default="The laptop I use for university is a Lenovo ThinkPad Desktop."
-            placeholder="Primary Work Computer"
-          >
-The laptop I use for university is a Lenovo ThinkPad Desktop.</textarea
-          >
+        <label for="subject-bg">Background in this Subject:</label>
+        <textarea id="subject-bg" required
+          data-default="I have little experience in Web Development, however I am taking this class to help facilitate my research."
+          placeholder="Background in this Subject">
+I have little experience in Web Development, however I am taking this class to help facilitate my research.</textarea>
 
-          <label for="background-platform"
-            >Backup Work Computer & Location Plan:</label
-          >
-          <textarea
-            id="background-platform"
-            required
-            data-default="My backup computer is a loan computer from Atkins Library."
-            placeholder="Backup Work Computer & Location Plan"
-          >
-My backup computer is a loan computer from Atkins Library.</textarea
-          >
-        </fieldset>
+        <label for="primary-platform">Primary Work Computer:</label>
+        <textarea id="primary-platform" required
+          data-default="The laptop I use for university is a Lenovo ThinkPad Desktop."
+          placeholder="Primary Work Computer">
+The laptop I use for university is a Lenovo ThinkPad Desktop.</textarea>
 
+        <label for="background-platform">Backup Work Computer & Location Plan:</label>
+        <textarea id="background-platform" required
+          data-default="My backup computer is a loan computer from Atkins Library."
+          placeholder="Backup Work Computer & Location Plan">
+My backup computer is a loan computer from Atkins Library.</textarea>
         <!-- Courses -->
-        <fieldset>
-          <legend>Courses</legend>
-          <div id="courses-container">
-            <input
-              type="text"
-              value="ITIS3135- Front-End Web Application Development: Assist in my research knowledge."
-              data-default="ITIS3135- Front-End Web Application Development: Assist in my research knowledge."
-              required
-              placeholder="Course and Reason"
-            />
+        <label>Courses I’m Taking, & Why:</label>
+        <div id="courses-container">
+          <div class="course">
+            <input type="text" class="course-dept" placeholder="Department (e.g. ITIS)" value="ITIS" data-default="ITIS"
+              required />
+
+            <input type="text" class="course-num" placeholder="Course Number (e.g. 3135)" value="3135"
+              data-default="3135" required />
+
+            <input type="text" class="course-name" placeholder="Course Name"
+              value="Front-End Web Application Development" data-default="Front-End Web Application Development"
+              required />
+
+            <input type="text" class="course-reason" placeholder="Reason for taking this course"
+              value="Assist in my research knowledge." data-default="Assist in my research knowledge." required />
           </div>
-          <button type="button" id="add-course">Add Course</button>
-        </fieldset>
+        </div>
+        <button type="button" id="add-course">Add Course</button>
+      </fieldset>
+      <!-- Quote -->
+      <fieldset>
+        <legend>Quote</legend>
+        <label for="quote">Quote:</label>
+        <input id="quote" type="text" required value="We learn from failure, not from success!"
+          data-default="We learn from failure, not from success!" placeholder="Quote" />
 
-        <!-- Quote -->
-        <fieldset>
-          <legend>Quote</legend>
-          <label for="quote">Quote:</label>
-          <input
-            id="quote"
-            type="text"
-            required
-            value="We learn from failure, not from success!"
-            data-default="We learn from failure, not from success!"
-            placeholder="Quote"
-          />
+        <label for="quote-author">Author:</label>
+        <input id="quote-author" type="text" required value="Bram Stoker" data-default="Bram Stoker"
+          placeholder="Author" />
+      </fieldset>
 
-          <label for="quote-author">Author:</label>
-          <input
-            id="quote-author"
-            type="text"
-            required
-            value="Bram Stoker"
-            data-default="Bram Stoker"
-            placeholder="Author"
-          />
-        </fieldset>
+      <!-- Links -->
+      <fieldset>
+        <legend>Links</legend>
+        <input id="clt-web" type="url" required value="https://webpages.charlotte.edu/mwyatt19/"
+          data-default="https://webpages.charlotte.edu/mwyatt19/" placeholder="CLT Web" />
+        <input id="github-io" type="url" required value="https://mwyatt19-cell.github.io/"
+          data-default="https://mwyatt19-cell.github.io/" placeholder="GitHub Pages" />
+        <input id="github" type="url" required value="https://github.com/mwyatt19-cell/"
+          data-default="https://github.com/mwyatt19-cell/" placeholder="GitHub" />
+        <input id="free-code-camp" type="url" required value="https://www.freecodecamp.org/alex12417093"
+          data-default="https://www.freecodecamp.org/alex12417093" placeholder="FreeCodeCamp" />
+        <input id="linked-in" type="url" required value="https://www.linkedin.com/in/alex-wyatt-a95b69301"
+          data-default="https://www.linkedin.com/in/alex-wyatt-a95b69301" placeholder="LinkedIn" />
+      </fieldset>
 
-        <!-- Links -->
-        <fieldset>
-          <legend>Links</legend>
-          <input
-            id="clt-web"
-            type="url"
-            required
-            value="https://webpages.charlotte.edu/mwyatt19/"
-            data-default="https://webpages.charlotte.edu/mwyatt19/"
-            placeholder="CLT Web"
-          />
-          <input
-            id="github-io"
-            type="url"
-            required
-            value="https://mwyatt19-cell.github.io/"
-            data-default="https://mwyatt19-cell.github.io/"
-            placeholder="GitHub Pages"
-          />
-          <input
-            id="github"
-            type="url"
-            required
-            value="https://github.com/mwyatt19-cell/"
-            data-default="https://github.com/mwyatt19-cell/"
-            placeholder="GitHub"
-          />
-          <input
-            id="free-code-camp"
-            type="url"
-            required
-            value="https://www.freecodecamp.org/alex12417093"
-            data-default="https://www.freecodecamp.org/alex12417093"
-            placeholder="FreeCodeCamp"
-          />
-          <input
-            id="linked-in"
-            type="url"
-            required
-            value="https://www.linkedin.com/in/alex-wyatt-a95b69301"
-            data-default="https://www.linkedin.com/in/alex-wyatt-a95b69301"
-            placeholder="LinkedIn"
-          />
-        </fieldset>
+      <!-- Optional Fields -->
+      <fieldset>
+        <legend>Extras</legend>
+        <label for="funny">Funny/Interesting item (optional):</label>
+        <input id="funny" type="text" placeholder="Funny/Interesting item" />
 
-        <!-- Optional Fields -->
-        <fieldset>
-          <legend>Extras</legend>
-          <label for="funny">Funny/Interesting item (optional):</label>
-          <input id="funny" type="text" placeholder="Funny/Interesting item" />
+        <label for="extra">Something I’d like to share (optional):</label>
+        <input id="extra" type="text" placeholder="Something I’d like to share" />
+      </fieldset>
 
-          <label for="extra">Something I’d like to share (optional):</label>
-          <input
-            id="extra"
-            type="text"
-            placeholder="Something I’d like to share"
-          />
-        </fieldset>
+      <!-- Buttons -->
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button" id="clear-btn">Clear</button>
+    </form>
 
-        <!-- Buttons -->
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-        <button type="button" id="clear-btn">Clear</button>
-      </form>
+    <div id="output"></div>
+  </main>
 
-      <div id="output"></div>
-    </main>
+  <div data-include="components/footer.html"></div>
 
-    <div data-include="components/footer.html"></div>
+  <script src="scripts/form.js"></script>
+</body>
 
-    <script src="scripts/form.js"></script>
-  </body>
 </html>

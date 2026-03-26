@@ -1,32 +1,124 @@
-/* Make small inputs under Acknowledgment smaller */
-input.small-input {
-  width: 80px;
-  max-width: 80px;
-  display: inline-block;
+/* =============================== */
+/* FORM GENERAL STYLING */
+/* =============================== */
+form {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
 }
 
-/* Make textareas large enough for generic sentence length */
-textarea {
-  width: 100%;
-  min-height: 3em;   /* 3 rows minimum */
-  padding: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  resize: vertical;   /* allow vertical resize */
-}
-
-/* Optional: add spacing for clarity */
 fieldset {
-  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
 }
 
 label {
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.2em;
+  margin-top: 0.75rem;
+  font-weight: 500;
 }
 
-input, textarea {
-  padding: 4px;
-  font-size: 1rem;
+input[type="text"],
+input[type="url"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0072ce;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+#output img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* =============================== */
+/* COURSES SECTION STYLING */
+/* =============================== */
+#courses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* spacing between courses */
+  margin-bottom: 0.5rem;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.course input {
+  flex: 1 1 180px; /* grow to fill space, min width 180px */
+}
+
+.course .delete-course {
+  flex: 0 0 auto;
+  background-color: #e74c3c;
+  padding: 0.4rem 0.8rem;
+}
+
+.course .delete-course:hover {
+  background-color: #c0392b;
+}
+
+/* ADD COURSE BUTTON */
+#add-course {
+  background-color: #27ae60;
+  margin-top: 0.5rem;
+}
+
+#add-course:hover {
+  background-color: #1e8449;
+}
+
+/* SMALL INPUTS (like initials or divider) */
+.small-input {
+  width: 80px;
+}
+
+/* LINKS output styling */
+#output p a {
+  color: #0072ce;
+  text-decoration: none;
+}
+
+#output p a:hover {
+  text-decoration: underline;
 }

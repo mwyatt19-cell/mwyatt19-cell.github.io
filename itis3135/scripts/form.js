@@ -4,6 +4,8 @@
 const form = document.getElementById("form");
 const output = document.getElementById("output");
 const coursesContainer = document.getElementById("courses-container");
+const addCourseBtn = document.getElementById("add-course");
+const MAX_COURSES = 7;
 
 // ===============================
 // HANDLE SUBMIT FUNCTION
@@ -40,33 +42,59 @@ function handleSubmit() {
   const quote = document.getElementById("quote").value.trim();
   const author = document.getElementById("quote-author").value.trim();
 
-  const courseInputs = coursesContainer.querySelectorAll("input");
+  // ===============================
+  // COURSES
+  // ===============================
+  const courseBlocks = coursesContainer.querySelectorAll(".course");
   let coursesHTML = "";
-  courseInputs.forEach((course) => {
-    if (course.value.trim() !== "") {
-      coursesHTML += `<li>${course.value.trim()}</li>`;
+
+  courseBlocks.forEach((course) => {
+    const dept = course.querySelector(".course-dept").value.trim();
+    const num = course.querySelector(".course-num").value.trim();
+    const name = course.querySelector(".course-name").value.trim();
+    const reason = course.querySelector(".course-reason").value.trim();
+
+    if (dept && num && name && reason) {
+      coursesHTML += `
+      <li>
+        <strong>${dept} ${num} - ${name}</strong>: ${reason}
+      </li>
+      `;
     }
   });
+
+  // ===============================
+  // LINKS
+  // ===============================
   const links = [
     document.getElementById("clt-web").value.trim(),
     document.getElementById("github-io").value.trim(),
     document.getElementById("github").value.trim(),
     document.getElementById("free-code-camp").value.trim(),
     document.getElementById("linked-in").value.trim(),
-  ]; // <- no trailing comma here
+  ];
+
+  // ===============================
+  // IMAGE
+  // ===============================
   const imageInput = document.getElementById("image");
   let imageURL = "";
   if (imageInput.files.length > 0) {
     imageURL = URL.createObjectURL(imageInput.files[0]);
   }
 
+  const defaultImage = "https://mwyatt19-cell.github.io/photo_hockey.png";
+  const finalImage = imageURL || defaultImage;
+
+  // ===============================
+  // OUTPUT
+  // ===============================
   output.innerHTML = `
     <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see - ${initials} - ${date}</p>
 
     <h1>${firstName} ${middleName ? middleName + "." : ""} “${nickname}” ${lastName} ${divider} ${adjective} ${animal}</h1>
 
-    ${imageURL ? `<img src="${imageURL}" alt="${caption}">` : ""}
-    <p>${caption}</p>
+    <img src="${finalImage}" alt="${caption}">
 
     <p>${statement}</p>
 
@@ -94,15 +122,15 @@ function handleSubmit() {
 
   form.style.display = "none";
 
-  document.getElementById("reset-link").addEventListener("click", function () {
-    location.reload();
-  });
+  document
+    .getElementById("reset-link")
+    .addEventListener("click", () => location.reload());
 }
 
 // ===============================
 // FORM SUBMIT EVENT
 // ===============================
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   handleSubmit();
 });
@@ -111,19 +139,21 @@ form.addEventListener("submit", function (e) {
 // CLEAR BUTTON
 // ===============================
 const clearBtn = document.getElementById("clear-btn");
-clearBtn.addEventListener("click", function () {
+clearBtn.addEventListener("click", () => {
   const fields = document.querySelectorAll("form input, form textarea");
   fields.forEach((field) => {
     if (["button", "submit", "reset", "file"].includes(field.type)) return;
     field.value = field.dataset.default || "";
   });
 
-  // Reset courses container to only initial course
-  const initialCourse = coursesContainer.querySelector("input[data-default]");
+  // Reset courses to only initial
+  const initialCourse = coursesContainer.querySelector(".course");
   coursesContainer.innerHTML = "";
   if (initialCourse) {
     const cloned = initialCourse.cloneNode(true);
-    cloned.value = cloned.dataset.default;
+    cloned.querySelectorAll("input").forEach((input) => {
+      input.value = input.dataset.default || "";
+    });
     coursesContainer.appendChild(cloned);
   }
 });
@@ -131,18 +161,35 @@ clearBtn.addEventListener("click", function () {
 // ===============================
 // ADD / REMOVE COURSES
 // ===============================
-const addCourseBtn = document.getElementById("add-course");
-addCourseBtn.addEventListener("click", function () {
+addCourseBtn.addEventListener("click", () => {
+  const currentCourses = coursesContainer.querySelectorAll(".course").length;
+  if (currentCourses >= MAX_COURSES) {
+    alert("You can only add up to 7 courses.");
+    return;
+  }
+
   const courseDiv = document.createElement("div");
+  courseDiv.classList.add("course");
+
   courseDiv.innerHTML = `
-    <input type="text" placeholder="Enter course and reason" required>
+    <input type="text" class="course-dept" placeholder="Department" required>
+    <input type="text" class="course-num" placeholder="Number" required>
+    <input type="text" class="course-name" placeholder="Course Name" required>
+    <input type="text" class="course-reason" placeholder="Reason" required>
     <button type="button" class="delete-course">Delete</button>
   `;
+
   coursesContainer.appendChild(courseDiv);
 });
 
-coursesContainer.addEventListener("click", function (e) {
+// Delete course functionality
+coursesContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-course")) {
+    const currentCourses = coursesContainer.querySelectorAll(".course").length;
+    if (currentCourses <= 1) {
+      alert("You must have at least 1 course.");
+      return;
+    }
     e.target.parentElement.remove();
   }
 });
