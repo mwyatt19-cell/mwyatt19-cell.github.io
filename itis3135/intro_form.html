@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction Form</title>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/default.css" />
   <link rel="stylesheet" href="styles/form.css" />
 </head>
 
@@ -174,10 +175,11 @@ My backup computer is a loan computer from Atkins Library.</textarea>
       <fieldset>
         <legend>Extras</legend>
         <label for="funny">Funny/Interesting item (optional):</label>
-        <input id="funny" type="text" placeholder="Funny/Interesting item" />
+        <input id="funny" type="text" placeholder="Funny/Interesting item" value="I used to dance" />
 
         <label for="extra">Something I’d like to share (optional):</label>
-        <input id="extra" type="text" placeholder="Something I’d like to share" />
+        <input id="extra" type="text" placeholder="Something I’d like to share"
+          value=" I’ve lived in NC my whole life." />
       </fieldset>
 
       <!-- Buttons -->
@@ -192,6 +194,13 @@ My backup computer is a loan computer from Atkins Library.</textarea>
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/form.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-datepicker@1.1.4/dist/datepicker.min.js"></script>
+  <script>
+    const dateInput = document.getElementById("ack-date");
+    if (dateInput.type !== "date") {
+      new Datepicker(dateInput, { format: 'yyyy-mm-dd' });
+    }
+  </script>
 </body>
 
 </html>

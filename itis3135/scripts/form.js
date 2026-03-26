@@ -8,6 +8,17 @@ const addCourseBtn = document.getElementById("add-course");
 const MAX_COURSES = 7;
 
 // ===============================
+// COURSES PREPOPULATION DATA
+// ===============================
+const coursesData = [
+  { dept: "ITIS", num: "3135", name: "Front-End Web Application Development", reason: "Assist in my research knowledge." },
+  { dept: "ITSC", num: "3146", name: "Intro Oper Syst & Networking", reason: "Required for my major." },
+  { dept: "UCOL", num: "3410", name: "Career Development Internship", reason: "Taken to have an internship on my resume and gain professional networking skills." },
+  { dept: "LTAM", num: "3360", name: "STUDIES IN HISPANIC FILM", reason: "Taken for my double major, like the teacher." },
+  { dept: "ITSC", num: "3790", name: "Honors Research", reason: "Required in Honors Program, also very interesting." }
+];
+
+// ===============================
 // HANDLE SUBMIT FUNCTION
 // ===============================
 function handleSubmit() {
@@ -18,21 +29,16 @@ function handleSubmit() {
 
   const initials = document.getElementById("acknowledgement").value.trim();
   const date = document.getElementById("ack-date").value.trim();
+  const divider = document.getElementById("divider").value.trim();
 
   const adjective = document.getElementById("adj").value.trim();
   const animal = document.getElementById("animal").value.trim();
-  const divider = document.getElementById("divider").value.trim();
 
-  const caption = document.getElementById("caption").value.trim();
   const statement = document.getElementById("statement").value.trim();
-
   const personalBG = document.getElementById("personal-bg").value.trim();
-  const professionalBG = document
-    .getElementById("professional-bg")
-    .value.trim();
+  const professionalBG = document.getElementById("professional-bg").value.trim();
   const academicBG = document.getElementById("academic-bg").value.trim();
   const subjectBG = document.getElementById("subject-bg").value.trim();
-
   const primary = document.getElementById("primary-platform").value.trim();
   const backup = document.getElementById("background-platform").value.trim();
 
@@ -47,32 +53,30 @@ function handleSubmit() {
   // ===============================
   const courseBlocks = coursesContainer.querySelectorAll(".course");
   let coursesHTML = "";
-
   courseBlocks.forEach((course) => {
     const dept = course.querySelector(".course-dept").value.trim();
     const num = course.querySelector(".course-num").value.trim();
     const name = course.querySelector(".course-name").value.trim();
     const reason = course.querySelector(".course-reason").value.trim();
-
     if (dept && num && name && reason) {
-      coursesHTML += `
-      <li>
-        <strong>${dept} ${num} - ${name}</strong>: ${reason}
-      </li>
-      `;
+      coursesHTML += `<li><strong>${dept} ${num} - ${name}</strong>: ${reason}</li>`;
     }
   });
 
   // ===============================
-  // LINKS
+  // LINKS WITH HYPERLINKS
   // ===============================
   const links = [
-    document.getElementById("clt-web").value.trim(),
-    document.getElementById("github-io").value.trim(),
-    document.getElementById("github").value.trim(),
-    document.getElementById("free-code-camp").value.trim(),
-    document.getElementById("linked-in").value.trim(),
+    { name: "CLT Web", url: document.getElementById("clt-web").value.trim() },
+    { name: "GitHub.io", url: document.getElementById("github-io").value.trim() },
+    { name: "GitHub", url: document.getElementById("github").value.trim() },
+    { name: "FreeCodeCamp", url: document.getElementById("free-code-camp").value.trim() },
+    { name: "LinkedIn", url: document.getElementById("linked-in").value.trim() }
   ];
+
+  const linksHTML = links
+    .map((link) => `<a href="${link.url}" target="_blank">${link.name}</a>`)
+    .join(" | ");
 
   // ===============================
   // IMAGE
@@ -82,39 +86,45 @@ function handleSubmit() {
   if (imageInput.files.length > 0) {
     imageURL = URL.createObjectURL(imageInput.files[0]);
   }
-
   const defaultImage = "https://mwyatt19-cell.github.io/photo_hockey.png";
   const finalImage = imageURL || defaultImage;
+  const caption = document.getElementById("caption").value.trim();
 
   // ===============================
   // OUTPUT
   // ===============================
   output.innerHTML = `
-    <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see - ${initials} - ${date}</p>
+    <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see - <em>${initials} - ${date}</em></p>
 
-    <h1>${firstName} ${middleName ? middleName + "." : ""} “${nickname}” ${lastName} ${divider} ${adjective} ${animal}</h1>
+    <h2>${lastName}, ${firstName} ${middleName ? middleName + "." : ""} ${nickname ? '“' + nickname + '”' : ""} ${divider} ${adjective} ${animal}</h2>
 
     <img src="${finalImage}" alt="${caption}">
+    <p style="text-align:center; font-style: italic;">${caption}</p>
 
     <p>${statement}</p>
 
-    <p><strong>Personal Background:</strong> ${personalBG}</p>
-    <p><strong>Professional Background:</strong> ${professionalBG}</p>
-    <p><strong>Academic Background:</strong> ${academicBG}</p>
-    <p><strong>Background in this Subject:</strong> ${subjectBG}</p>
-    <p><strong>Primary Work Computer:</strong> ${primary}</p>
-    <p><strong>Backup Work Computer & Location Plan:</strong> ${backup}</p>
+    <ul>
+      <li><strong>Personal Background:</strong> ${personalBG}</li>
+      <li><strong>Professional Background:</strong> ${professionalBG}</li>
+      <li><strong>Academic Background:</strong> ${academicBG}</li>
+      <li><strong>Background in this Subject:</strong> ${subjectBG}</li>
+      <li><strong>Primary Work Computer:</strong> ${primary}</li>
+      <li><strong>Backup Work Computer & Location Plan:</strong> ${backup}</li>
+    </ul>
 
     <p><strong>Courses I’m Taking, & Why:</strong></p>
-    <ul>${coursesHTML}</ul>
+    <ol>
+      ${coursesHTML}
+    </ol>
 
     ${funny ? `<p><strong>Funny/Interesting item:</strong> ${funny}</p>` : ""}
     ${extra ? `<p><strong>I’d also like to share:</strong> ${extra}</p>` : ""}
 
-    <p>“${quote}”</p>
-    <p>- ${author}</p>
+    <br>
+    <p style="text-align:center;">“${quote}”</p>
+    <p style="text-align:center; font-style: italic;">- ${author}</p>
 
-    <p>${links.join(" | ")}</p>
+    <p style="text-align:center;">${linksHTML}</p>
 
     <br>
     <button id="reset-link">Reset Form</button>
@@ -122,9 +132,7 @@ function handleSubmit() {
 
   form.style.display = "none";
 
-  document
-    .getElementById("reset-link")
-    .addEventListener("click", () => location.reload());
+  document.getElementById("reset-link").addEventListener("click", () => location.reload());
 }
 
 // ===============================
@@ -171,11 +179,17 @@ addCourseBtn.addEventListener("click", () => {
   const courseDiv = document.createElement("div");
   courseDiv.classList.add("course");
 
+  // Prepopulate from coursesData if within first 5
+  let prefill = { dept: "", num: "", name: "", reason: "" };
+  if (currentCourses < coursesData.length) {
+    prefill = coursesData[currentCourses];
+  }
+
   courseDiv.innerHTML = `
-    <input type="text" class="course-dept" placeholder="Department" required>
-    <input type="text" class="course-num" placeholder="Number" required>
-    <input type="text" class="course-name" placeholder="Course Name" required>
-    <input type="text" class="course-reason" placeholder="Reason" required>
+    <input type="text" class="course-dept" placeholder="Department" value="${prefill.dept}" required>
+    <input type="text" class="course-num" placeholder="Number" value="${prefill.num}" required>
+    <input type="text" class="course-name" placeholder="Course Name" value="${prefill.name}" required>
+    <input type="text" class="course-reason" placeholder="Reason" value="${prefill.reason}" required>
     <button type="button" class="delete-course">Delete</button>
   `;
 
