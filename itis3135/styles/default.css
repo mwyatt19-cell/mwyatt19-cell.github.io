@@ -18,23 +18,26 @@ header {
 h1 {
   font-family: "SN Pro", "Google Sans";
 }
-
-nav .Primary-Menu {
+/* Scope everything to header */
+header .Primary-Menu {
   overflow: hidden;
 }
 
-ul {
+/* Target the UL itself */
+header .Primary-Menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-li {
+/* Target list items */
+header .Primary-Menu li {
   float: left;
 }
 
-li a {
+/* Target links */
+header .Primary-Menu a {
   text-decoration: none;
   text-align: center;
   display: block;
