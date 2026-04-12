@@ -47,28 +47,3 @@ header {
   align-items: stretch;
 }
 /*-------------------------------------------------------------------------------------------------------------------------*/
-.contact-form {
-  font-size: 1.2em;
-}
-
-.contact-form input {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #170000;
-  border-radius: 4px;
-}
-.contact-form input:hover {
-  background-color: rgb(218, 216, 216);
-}
-
-.contact-form input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #170000;
-  border-radius: 4px;
-}

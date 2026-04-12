@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="../styles/donate.css">
     <title>Donate - Paws &amp; Hearts Animal Shelter</title>
 </head>
 
@@ -14,7 +15,27 @@
     <div class="page-layout">
         <div data-include="../components/navbar.html"></div>
         <main>
+            <form class="donate-form">
+                <h1>Donate</h1>
+                <p>We greatly appreciate any contribution to support our mission!</p>
+                <p> Weekly donations help us provide food, medical care, and shelter for our dogs. Your support makes a
+                    huge difference in their lives!</p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required placeholder="Susan Rodriguez"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required placeholder="susan@example.com"><br>
+                <label for="amount">Amount:</label><br>
+                <input type="radio" id="amount" name="amount" value="25"> $25<br>
+                <input type="radio" id="amount" name="amount" value="50"> $50<br>
+                <input type="radio" id="amount" name="amount" value="100"> $100<br>
+                <input type="radio" id="amount" name="amount" value="other"> Other Amount<br>
+                <input type="number" id="amount" name="amount" placeholder="Enter custom amount"><br>
+                <label for="recurrence">Make this a recurring donation?</label><br>
+                <input type="radio" id="recurrence" name="recurrence" value="yes"> Yes, make this a monthly donation<br>
+                <input type="radio" id="recurrence" name="recurrence" value="no"> No, make this a one-time donation<br>
 
+                <button type="submit">Submit</button>
+            </form>
         </main>
     </div>
     <div data-include="../components/footer.html"></div>
