@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/default.css">
+    <title>Paws &amp; Hearts Animal Shelter</title>
+</head>
+
+<body>
+    <div data-include="../components/header.html"></div>
+    <div data-include="../components/navbar.html"></div>
+    <main>
+        <h2>Welcome!</h2>
+        <p> Welcome to Paws &amp; Hearts Animal Shelter! </p>
+        <h2> Dog of the Week</h2>
+        <section class="adoption-layout">
+            <h3>Bella</h3>
+            <img src="../images/bella.jpg" alt="Bella the dog" width="300">
+            <ul>
+                <li>Breed: Glen of Imaal Terrier</li>
+                <li>Age: 3 years</li>
+                <li>Size: Small </li>
+                <li>Great for kids and energetic households</li>
+            </ul>
+            <button type="button">Adopt Me!</button>
+
+        </section>
+        <section class="testimonials">
+            <h3>Testimonials</h3>
+            <q>
+                "Adopting from Paws &amp; Hearts was the best decision we ever made! The staff was so helpful and
+                caring, and we found our perfect furry family member. We can't thank them enough for the love and
+                support they provided throughout the adoption process.-Susan R."
+            </q>
+            <hr>
+            <q>
+                "Paws &amp; Hearts gave us a second chance at pet parenthood. Their dedication to animal welfare is
+                unmatched, and the adoption process was seamless. Highly recommend!- Rojan K."
+            </q>
+        </section>
+        <section class="newsletter">
+            <h3>Stay Connected</h3>
+            <p>Sign up for our newsletter to receive updates on new dogs, events, and ways to support our shelter!</p>
+            <form action="submit_email.php" method="post">
+                <input type="email" name="email" placeholder="pawsandhearts@email.com" required>
+                <button type="submit">Join Our Mailing List</button>
+            </form>
+        </section>
+
+
+    </main>
+    <div data-include="../components/footer.html"></div>
+    <script src="../scripts/HTMLInclude.min.js"></script>
+
+</body>
+
+</html>
+<!--Home Page Layout
+Purpose of the page: Introduce the shelter, highlight adoptable dogs, and guide visitors to other important sections like Adopt and Donate.
+Audience/Users of the page: General visitors, potential adopters, donors, volunteers.
+Content of the page: Hero image with logo and tagline, featured adoptable dogs, quick links to Adopt, Donate, and Contact pages, testimonials or success stories. Connects to a Newsletter email sign up.
+User data entry: Newsletter email.
+Data validation: No.
+Buttons/links/drop-downs: Navigation menu links.
+Actions on the page: Clicking buttons navigates to respective pages; newsletter sign-up submits email via form submission.-->

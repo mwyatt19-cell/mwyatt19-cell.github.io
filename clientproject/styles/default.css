@@ -1,0 +1,46 @@
+body {
+  font-family: Impact, sans-serif;
+  background-color: #fdf0d5;
+  color: #221510;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header {
+  font-family: Palatino, serif;
+  color: #221510;
+  background-color: #f4d79c;
+  display: flex;
+}
+
+.Primary-Menu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  height: 80vh;
+  width: 20vw;
+}
+
+.Primary-Menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #221510;
+  font-size: 1.2rem;
+}
+.Primary-Menu li {
+  display: block;
+  flex: 1;
+}
+.Primary-Menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
