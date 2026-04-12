@@ -14,9 +14,32 @@
     <div class="page-layout">
         <div data-include="../components/navbar.html"></div>
         <main>
+            <form class="contact-form">
+                <h1>Contact Us</h1>
+                <p>Have questions, want to volunteer, or need to report a lost/found pet? Reach out to us!</p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required placeholder="Susan Rodriguez"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required placeholder="susan@example.com"><br>
+                <label for="subject">Subject of Message:</label><br>
+                <input type="checkbox" id="subject" name="subject"> Volunteer Opportunities<br>
+                <input type="checkbox" id="subject" name="subject"> Lost/Found Pet Report<br>
+                <input type="checkbox" id="subject" name="subject"> General Inquiry<br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required
+                    placeholder="How can we help you?"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="site-info">
+                <p><strong>Address:</strong> 1234 Paws Street, Anytown, USA</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Email:</strong> info@pawsandhearts.org</p>
+            </div>
         </main>
     </div>
-    <div data-include="../components/footer.html"></div>
+
+    <div data-include=" ../components/footer.html"></div>
     <script src="../scripts/HTMLInclude.min.js"></script>
 </body>
 
