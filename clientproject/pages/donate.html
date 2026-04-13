@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styles/default.css">
-    <link rel="stylesheet" href="../styles/donate.css">
+    <link rel="stylesheet" href="../styles/default.css" />
+    <link rel="stylesheet" href="../styles/donate.css" />
     <title>Donate - Paws &amp; Hearts Animal Shelter</title>
 </head>
 
@@ -18,22 +18,30 @@
             <form class="donate-form">
                 <h1>Donate</h1>
                 <p>We greatly appreciate any contribution to support our mission!</p>
-                <p> Weekly donations help us provide food, medical care, and shelter for our dogs. Your support makes a
-                    huge difference in their lives!</p>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required placeholder="Susan Rodriguez"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required placeholder="susan@example.com"><br>
-                <label for="amount">Amount:</label><br>
-                <input type="radio" id="amount" name="amount" value="25"> $25<br>
-                <input type="radio" id="amount" name="amount" value="50"> $50<br>
-                <input type="radio" id="amount" name="amount" value="100"> $100<br>
-                <input type="radio" id="amount" name="amount" value="other"> Other Amount<br>
-                <input type="number" id="amount" name="amount" placeholder="Enter custom amount"><br>
-                <label for="recurrence">Make this a recurring donation?</label><br>
-                <input type="radio" id="recurrence" name="recurrence" value="yes"> Yes, make this a monthly donation<br>
-                <input type="radio" id="recurrence" name="recurrence" value="no"> No, make this a one-time donation<br>
-
+                <p>
+                    Weekly donations help us provide food, medical care, and shelter for
+                    our dogs. Your support makes a huge difference in their lives!
+                </p>
+                <label for="name">Name:</label><br />
+                <input type="text" id="name" name="name" required placeholder="Susan Rodriguez" /><br />
+                <label for="email">Email:</label><br />
+                <input type="email" id="email" name="email" required placeholder="susan@example.com" /><br />
+                <fieldset>
+                    <legend>Donation Amount:</legend>
+                    <input type="radio" value="25" /> $25<br />
+                    <input type="radio" value="50" /> $50<br />
+                    <input type="radio" value="100" /> $100<br />
+                    <input type="radio" value="other" /> Other Amount<br />
+                    <input type="number" placeholder="Enter custom amount" /><br />
+                </fieldset>
+                <fieldset>
+                    <legend>Make this a recurring donation?</legend>
+                    <br />
+                    <input type="radio" value="yes" />
+                    Yes, make this a monthly donation<br />
+                    <input type="radio" value="no" />
+                    No, make this a one-time donation<br />
+                </fieldset>
                 <button type="submit">Submit</button>
             </form>
         </main>

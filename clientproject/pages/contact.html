@@ -22,10 +22,15 @@
                 <input type="text" id="name" name="name" required placeholder="Susan Rodriguez"><br>
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required placeholder="susan@example.com"><br>
-                <label for="subject">Subject of Message:</label><br>
-                <input type="checkbox" id="subject" name="subject"> Volunteer Opportunities<br>
-                <input type="checkbox" id="subject" name="subject"> Lost/Found Pet Report<br>
-                <input type="checkbox" id="subject" name="subject"> General Inquiry<br>
+                <fieldset>
+                    <legend>Subject of Message:</legend>
+                    <input type="checkbox" id="subject1" name="subject" value="volunteer">
+                    <label for="subject1">Volunteer Opportunities</label><br>
+                    <input type="checkbox" id="subject2" name="subject" value="lost_found">
+                    <label for="subject2">Lost/Found Pet Report</label><br>
+                    <input type="checkbox" id="subject3" name="subject" value="general">
+                    <label for="subject3">General Inquiry</label><br>
+                </fieldset>
 
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="5" required
