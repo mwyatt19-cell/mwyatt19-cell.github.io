@@ -7,6 +7,23 @@ const coursesContainer = document.getElementById("courses-container");
 const addCourseBtn = document.getElementById("add-course");
 const MAX_COURSES = 7;
 
+function addDeleteButton(courseDiv) {
+  if (
+    !courseDiv.classList.contains("protected-course") &&
+    !courseDiv.querySelector(".delete-course")
+  ) {
+    const deleteBtn = document.createElement("button");
+    deleteBtn.type = "button";
+    deleteBtn.classList.add("delete-course");
+    deleteBtn.textContent = "Delete";
+    courseDiv.appendChild(deleteBtn);
+  }
+}
+document.querySelectorAll(".course").forEach((courseDiv) => {
+  addDeleteButton(courseDiv);
+});
+
+
 // ===============================
 // COURSES PREPOPULATION DATA
 // ===============================
@@ -93,6 +110,7 @@ function handleSubmit() {
   // ===============================
   // OUTPUT
   // ===============================
+
   output.innerHTML = `
     <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see - <em>${initials} - ${date}</em></p>
 
@@ -185,25 +203,28 @@ addCourseBtn.addEventListener("click", () => {
     prefill = coursesData[currentCourses];
   }
 
-  courseDiv.innerHTML = `
-    <input type="text" class="course-dept" placeholder="Department" value="${prefill.dept}" required>
-    <input type="text" class="course-num" placeholder="Number" value="${prefill.num}" required>
-    <input type="text" class="course-name" placeholder="Course Name" value="${prefill.name}" required>
-    <input type="text" class="course-reason" placeholder="Reason" value="${prefill.reason}" required>
-    <button type="button" class="delete-course">Delete</button>
-  `;
+ courseDiv.innerHTML = `
+  <input type="text" class="course-dept" placeholder="Department" value="${prefill.dept}" required>
+  <input type="text" class="course-num" placeholder="Number" value="${prefill.num}" required>
+  <input type="text" class="course-name" placeholder="Course Name" value="${prefill.name}" required>
+  <input type="text" class="course-reason" placeholder="Reason" value="${prefill.reason}" required>
+`;
 
-  coursesContainer.appendChild(courseDiv);
+addDeleteButton(courseDiv);
+coursesContainer.appendChild(courseDiv);
+
 });
 
 // Delete course functionality
 coursesContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-course")) {
-    const currentCourses = coursesContainer.querySelectorAll(".course").length;
-    if (currentCourses <= 1) {
-      alert("You must have at least 1 course.");
+    const courseDiv = e.target.parentElement;
+
+    if (courseDiv.classList.contains("protected-course")) {
+      alert("The first course cannot be deleted.");
       return;
     }
-    e.target.parentElement.remove();
+
+    courseDiv.remove();
   }
 });
