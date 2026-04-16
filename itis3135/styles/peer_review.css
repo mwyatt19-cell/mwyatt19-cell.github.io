@@ -1,0 +1,16 @@
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+  list-style-type: none;
+}
+.peer-review li:not(.italic) {
+  list-style-type: square;
+}
+.yes::marker {
+  color: green;
+}
+.no::marker {
+  color: red;
+}
