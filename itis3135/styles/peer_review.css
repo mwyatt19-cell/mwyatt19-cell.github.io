@@ -14,3 +14,7 @@
 .no::marker {
   color: red;
 }
+
+img {
+  width: 20vw;
+}
