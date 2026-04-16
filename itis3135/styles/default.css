@@ -19,12 +19,12 @@ h1 {
   font-family: "SN Pro", "Google Sans";
 }
 /* Scope everything to header */
-header .Primary-Menu {
+header .primary-menu {
   overflow: hidden;
 }
 
 /* Target the UL itself */
-header .Primary-Menu ul {
+header .primary-menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -32,13 +32,13 @@ header .Primary-Menu ul {
 }
 
 /* Target list items */
-header .Primary-Menu li {
+header .primary-menu li {
   float: left;
   text-decoration: none;
 }
 
 /* Target links */
-header .Primary-Menu a {
+header .primary-menu a {
   text-align: center;
   display: block;
   padding: 25px;
