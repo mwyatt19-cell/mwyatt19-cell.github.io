@@ -34,11 +34,11 @@ header .Primary-Menu ul {
 /* Target list items */
 header .Primary-Menu li {
   float: left;
+  text-decoration: none;
 }
 
 /* Target links */
 header .Primary-Menu a {
-  text-decoration: none;
   text-align: center;
   display: block;
   padding: 25px;
