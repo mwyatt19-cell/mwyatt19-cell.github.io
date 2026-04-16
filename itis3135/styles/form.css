@@ -110,11 +110,6 @@ h2 {
   margin: 0.5rem 0;
 }
 
-#output ul li strong,
-#output ol li strong {
-  font-weight: bold;
-}
-
 #output a {
   color: #0072ce;
   text-decoration: none;

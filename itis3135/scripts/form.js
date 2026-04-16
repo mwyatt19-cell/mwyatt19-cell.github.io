@@ -63,8 +63,6 @@ function handleSubmit() {
   const extra = document.getElementById("extra").value.trim();
 
   const quote = document.getElementById("quote").value.trim();
-  const author = document.getElementById("quote-author").value.trim();
-
   // ===============================
   // COURSES
   // ===============================
@@ -76,7 +74,7 @@ function handleSubmit() {
     const name = course.querySelector(".course-name").value.trim();
     const reason = course.querySelector(".course-reason").value.trim();
     if (dept && num && name && reason) {
-      coursesHTML += `<li><strong>${dept} ${num} - ${name}</strong>: ${reason}</li>`;
+      coursesHTML += `<li>${dept} ${num} - ${name}: ${reason}</li>`;
     }
   });
 
@@ -93,7 +91,7 @@ function handleSubmit() {
 
   const linksHTML = links
     .map((link) => `<a href="${link.url}" target="_blank">${link.name}</a>`)
-    .join(" | ");
+    .join(" ~ ");
 
   // ===============================
   // IMAGE
@@ -117,32 +115,31 @@ function handleSubmit() {
     <h2>${lastName}, ${firstName} ${middleName ? middleName + "." : ""} ${nickname ? '“' + nickname + '”' : ""} ${divider} ${adjective} ${animal}</h2>
 
     <img src="${finalImage}" alt="${caption}">
-    <p style="text-align:center; font-style: italic;">${caption}</p>
+    <p style="font-style: italic;">${caption}</p>
 
     <p>${statement}</p>
 
     <ul>
-      <li><strong>Personal Background:</strong> ${personalBG}</li>
-      <li><strong>Professional Background:</strong> ${professionalBG}</li>
-      <li><strong>Academic Background:</strong> ${academicBG}</li>
-      <li><strong>Background in this Subject:</strong> ${subjectBG}</li>
-      <li><strong>Primary Work Computer:</strong> ${primary}</li>
-      <li><strong>Backup Work Computer & Location Plan:</strong> ${backup}</li>
+      <li>Personal Background: ${personalBG}</li>
+      <li>Professional Background: ${professionalBG}</li>
+      <li>Academic Background: ${academicBG}</li>
+      <li>Background in this Subject: ${subjectBG}</li>
+      <li>Primary Work Computer: ${primary}</li>
+      <li>Backup Work Computer & Location Plan: ${backup}</li>
     </ul>
 
-    <p><strong>Courses I’m Taking, & Why:</strong></p>
+    <p>Courses I’m Taking, & Why:</p>
     <ol>
       ${coursesHTML}
     </ol>
 
-    ${funny ? `<p><strong>Funny/Interesting item:</strong> ${funny}</p>` : ""}
-    ${extra ? `<p><strong>I’d also like to share:</strong> ${extra}</p>` : ""}
+    ${funny ? `<p>Funny/Interesting item: ${funny}</p>` : ""}
+    ${extra ? `<p>I’d also like to share: ${extra}</p>` : ""}
 
     <br>
-    <p style="text-align:center;">“${quote}”</p>
-    <p style="text-align:center; font-style: italic;">- ${author}</p>
-
-    <p style="text-align:center;">${linksHTML}</p>
+    <p>${quote}</p>
+    
+    <p>${linksHTML}</p>
 
     <br>
     <button id="reset-link">Reset Form</button>
