@@ -8,6 +8,9 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/default.css" />
   <link rel="stylesheet" href="styles/form.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -238,7 +241,12 @@ My backup computer is a loan computer from Atkins Library.</textarea>
       <button type="submit">Submit</button>
       <button type="button" id="reset-btn">Reset</button>
       <button type="button" id="clear-btn">Clear</button>
+      <button type="button" id="generate-html-btn">Generate HTML</button>
+      <button type="button" id="generate-json-btn">Generate JSON</button>
     </form>
+    <section id="html-output" style="display:none;">
+      <pre><code class="html" id="code-block"></code></pre>
+    </section>
 
     <div id="output"></div>
   </main>
@@ -246,6 +254,8 @@ My backup computer is a loan computer from Atkins Library.</textarea>
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/form.js"></script>
+  <script src="scripts/generate_html.js"></script>
+  <script src="scripts/generate_json.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-datepicker@1.1.4/dist/datepicker.min.js"></script>
   <script>
     const dateInput = document.getElementById("ack-date");

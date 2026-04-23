@@ -23,16 +23,41 @@ document.querySelectorAll(".course").forEach((courseDiv) => {
   addDeleteButton(courseDiv);
 });
 
-
 // ===============================
 // COURSES PREPOPULATION DATA
 // ===============================
 const coursesData = [
-  { dept: "ITIS", num: "3135", name: "Front-End Web Application Development", reason: "Assist in my research knowledge." },
-  { dept: "ITSC", num: "3146", name: "Intro Oper Syst & Networking", reason: "Required for my major." },
-  { dept: "UCOL", num: "3410", name: "Career Development Internship", reason: "Taken to have an internship on my resume and gain professional networking skills." },
-  { dept: "LTAM", num: "3360", name: "STUDIES IN HISPANIC FILM", reason: "Taken for my double major, like the teacher." },
-  { dept: "ITSC", num: "3790", name: "Honors Research", reason: "Required in Honors Program, also very interesting." }
+  {
+    dept: "ITIS",
+    num: "3135",
+    name: "Front-End Web Application Development",
+    reason: "Assist in my research knowledge."
+  },
+  {
+    dept: "ITSC",
+    num: "3146",
+    name: "Intro Oper Syst & Networking",
+    reason: "Required for my major."
+  },
+  {
+    dept: "UCOL",
+    num: "3410",
+    name: "Career Development Internship",
+    reason:
+      "Taken to have an internship on my resume and gain professional networking skills."
+  },
+  {
+    dept: "LTAM",
+    num: "3360",
+    name: "STUDIES IN HISPANIC FILM",
+    reason: "Taken for my double major, like the teacher."
+  },
+  {
+    dept: "ITSC",
+    num: "3790",
+    name: "Honors Research",
+    reason: "Required in Honors Program, also very interesting."
+  }
 ];
 
 // ===============================
@@ -53,7 +78,9 @@ function handleSubmit() {
 
   const statement = document.getElementById("statement").value.trim();
   const personalBG = document.getElementById("personal-bg").value.trim();
-  const professionalBG = document.getElementById("professional-bg").value.trim();
+  const professionalBG = document
+    .getElementById("professional-bg")
+    .value.trim();
   const academicBG = document.getElementById("academic-bg").value.trim();
   const subjectBG = document.getElementById("subject-bg").value.trim();
   const primary = document.getElementById("primary-platform").value.trim();
@@ -83,10 +110,19 @@ function handleSubmit() {
   // ===============================
   const links = [
     { name: "CLT Web", url: document.getElementById("clt-web").value.trim() },
-    { name: "GitHub.io", url: document.getElementById("github-io").value.trim() },
+    {
+      name: "GitHub.io",
+      url: document.getElementById("github-io").value.trim()
+    },
     { name: "GitHub", url: document.getElementById("github").value.trim() },
-    { name: "FreeCodeCamp", url: document.getElementById("free-code-camp").value.trim() },
-    { name: "LinkedIn", url: document.getElementById("linked-in").value.trim() }
+    {
+      name: "FreeCodeCamp",
+      url: document.getElementById("free-code-camp").value.trim()
+    },
+    {
+      name: "LinkedIn",
+      url: document.getElementById("linked-in").value.trim()
+    }
   ];
 
   const linksHTML = links
@@ -112,7 +148,7 @@ function handleSubmit() {
   output.innerHTML = `
     <p>I understand that what I put here is publicly available on the web and I won’t put anything here I don’t want the public to see - <em>${initials} - ${date}</em></p>
 
-    <h2>${lastName}, ${firstName} ${middleName ? middleName + "." : ""} ${nickname ? '“' + nickname + '”' : ""} ${divider} ${adjective} ${animal}</h2>
+    <h2>${lastName}, ${firstName} ${middleName ? middleName + "." : ""} ${nickname ? "“" + nickname + "”" : ""} ${divider} ${adjective} ${animal}</h2>
 
     <img src="${finalImage}" alt="${caption}">
     <p style="font-style: italic;">${caption}</p>
@@ -147,7 +183,9 @@ function handleSubmit() {
 
   form.style.display = "none";
 
-  document.getElementById("reset-link").addEventListener("click", () => location.reload());
+  document
+    .getElementById("reset-link")
+    .addEventListener("click", () => location.reload());
 }
 
 // ===============================
@@ -162,23 +200,35 @@ form.addEventListener("submit", (e) => {
 // CLEAR BUTTON
 // ===============================
 const clearBtn = document.getElementById("clear-btn");
-clearBtn.addEventListener("click", () => {
-  const fields = document.querySelectorAll("form input, form textarea");
-  fields.forEach((field) => {
-    if (["button", "submit", "reset", "file"].includes(field.type)) return;
-    field.value = field.dataset.default || "";
-  });
 
-  // Reset courses to only initial
-  const initialCourse = coursesContainer.querySelector(".course");
+clearBtn.addEventListener("click", () => {
+  const confirmClear = confirm(
+    "Are you sure you want to clear the form? This cannot be undone."
+  );
+
+  if (!confirmClear) return;
+
+  // 1. Reset normal form fields
+  form.reset();
+
+  // 2. Clear ALL courses
   coursesContainer.innerHTML = "";
-  if (initialCourse) {
-    const cloned = initialCourse.cloneNode(true);
-    cloned.querySelectorAll("input").forEach((input) => {
-      input.value = input.dataset.default || "";
-    });
-    coursesContainer.appendChild(cloned);
-  }
+
+  // 3. Rebuild courses from original data
+  coursesData.forEach((courseData, index) => {
+    const courseDiv = document.createElement("div");
+    courseDiv.classList.add("course");
+
+    courseDiv.innerHTML = `
+      <input type="text" class="course-dept" placeholder="Department" value="${courseData.dept}" required>
+      <input type="text" class="course-num" placeholder="Number" value="${courseData.num}" required>
+      <input type="text" class="course-name" placeholder="Course Name" value="${courseData.name}" required>
+      <input type="text" class="course-reason" placeholder="Reason" value="${courseData.reason}" required>
+    `;
+
+    addDeleteButton(courseDiv);
+    coursesContainer.appendChild(courseDiv);
+  });
 });
 
 // ===============================
@@ -200,16 +250,15 @@ addCourseBtn.addEventListener("click", () => {
     prefill = coursesData[currentCourses];
   }
 
- courseDiv.innerHTML = `
+  courseDiv.innerHTML = `
   <input type="text" class="course-dept" placeholder="Department" value="${prefill.dept}" required>
   <input type="text" class="course-num" placeholder="Number" value="${prefill.num}" required>
   <input type="text" class="course-name" placeholder="Course Name" value="${prefill.name}" required>
   <input type="text" class="course-reason" placeholder="Reason" value="${prefill.reason}" required>
 `;
 
-addDeleteButton(courseDiv);
-coursesContainer.appendChild(courseDiv);
-
+  addDeleteButton(courseDiv);
+  coursesContainer.appendChild(courseDiv);
 });
 
 // Delete course functionality
