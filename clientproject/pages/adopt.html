@@ -7,6 +7,8 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/default.css" />
     <link rel="stylesheet" href="../styles/adopt.css" />
+
+    <link rel="stylesheet" href="../styles/adoptform.css" />
     <title>Adopt - Paws &amp; Hearts Animal Shelter</title>
 </head>
 
@@ -25,7 +27,7 @@
                         <li>Size: Small</li>
                         <li>Great for kids and energetic households</li>
                     </ul>
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="bella">Adopt Me!</button>
                 </section>
                 <section class="adoption-layout">
                     <h3>Charlie</h3>
@@ -37,7 +39,7 @@
                         <li>Great for older couples and quiet households</li>
                     </ul>
 
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="charlie">Adopt Me!</button>
                 </section>
                 <section class="adoption-layout">
                     <h3>Luna and Max</h3>
@@ -48,7 +50,7 @@
                         <li>Size: Small</li>
                         <li>Great for energetic couples, must adopt together!</li>
                     </ul>
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="luna_max">Adopt Me!</button>
                 </section>
                 <section class="adoption-layout">
                     <h3>Rocky</h3>
@@ -59,7 +61,7 @@
                         <li>Size: Medium</li>
                         <li>Great for experienced dog owners</li>
                     </ul>
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="rocky">Adopt Me!</button>
                 </section>
                 <section class="adoption-layout">
                     <h3>Daisy</h3>
@@ -70,7 +72,7 @@
                         <li>Size: Small</li>
                         <li>Great for active households and families with older kids</li>
                     </ul>
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="daisy">Adopt Me!</button>
                 </section>
                 <section class="adoption-layout">
                     <h3>Becky</h3>
@@ -81,13 +83,137 @@
                         <li>Size: Large</li>
                         <li>Great for outdoorsy individuals</li>
                     </ul>
-                    <button type="button">Adopt Me!</button>
+                    <button type="button" class="open-button" data-dog="becky">Adopt Me!</button>
                 </section>
+            </div>
+            <div class="form-popup" id="myForm">
+                <form class="form-container" id="adoptionForm">
+                    <h1>Adoption Inquiry</h1>
+                    <fieldset class="contact-information">
+                        <legend class="form-legend">Contact Information</legend>
+                        <label for="name">Enter your first and last name:</label><br />
+                        <input type="text" id="name" name="name" required placeholder="Susan Rodriguez" /><br />
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email" required
+                            placeholder="susan.rodriguez@example.com" /><br />
+                        <label for="phone">Phone:</label><br />
+                        <input type="tel" id="phone" name="phone" required placeholder="555-123-4567" /><br />
+                        <label for="contact_consent">I consent to being contacted about this
+                            adoption</label>
+                        <input type="checkbox" id="contact_consent" name="contact_consent" required /><br />
+                        <label for="payment_consent">I understand there may be an adoption fee ($0-$100) and consent to
+                            providing
+                            payment information if necessary</label>
+                        <input type="checkbox" id="payment_consent" name="payment_consent" required /><br />
+                    </fieldset>
+                    <fieldset class="personal-information">
+                        <legend class="form-legend">Personal Information</legend>
+                        <p>
+                            Have you ever owned a dog before?</p>
+                        <input type="radio" id="owner_yes" name="type_of_owner" value="yes" required />
+                        Yes<br />
+                        <input type="radio" id="owner_no" name="type_of_owner" value="no" required />
+                        No<br />
+                        <p>What type of dwelling do you reside in?</p>
+                        <input type="radio" id="house" name="dwelling" value="house" required />
+                        <label for="house">House</label><br />
+                        <input type="radio" id="apartment" name="dwelling" value="apartment" required />
+                        <label for="apartment">Apartment</label><br />
+                        <input type="radio" id="trailer" name="dwelling" value="trailer" required />
+                        <label for="trailer">Trailer</label><br />
+                        <input type="radio" id="other" name="dwelling" value="other" required />
+                        <label for="other">Other</label><br />
+                        <p>Do you have a fenced yard?</p>
+                        <input type="radio" id="yard_yes" name="yard" value="yes" required />
+                        <label for="yard_yes">Yes</label><br />
+                        <input type="radio" id="yard_no" name="yard" value="no" required />
+                        <label for="yard_no">No</label><br />
+                        <p>Do you have children?</p>
+                        <input type="radio" id="kids_yes" name="kids" value="yes" required />
+                        <label for="kids_yes">Yes</label><br />
+                        <input type="radio" id="kids_no" name="kids" value="no" required />
+                        <label for="kids_no">No</label><br />
+                        <p>Do you have other pets?</p>
+                        <input type="radio" id="pets_yes_dog" name="pets" value="dog" required />
+                        <label for="pets_yes_dog">Yes-dog</label><br />
+                        <input type="radio" id="pets_yes_cat" name="pets" value="cat" required />
+                        <label for="pets_yes_cat">Yes-cat</label><br />
+                        <input type="radio" id="pets_yes_other" name="pets" value="other" required />
+                        <label for="pets_yes_other">Yes-other</label><br />
+
+                        <input type="radio" id="pets_no" name="pets" value="no" required />
+                        <label for="pets_no">No</label><br />
+                        <p>What is your current employment status?</p>
+                        <input type="radio" id="employed" name="employment" value="employed" required />
+                        <label for="employed">Employed</label><br />
+                        <input type="radio" id="unemployed" name="employment" value="unemployed" required />
+                        <label for="unemployed">Unemployed</label><br />
+                        <input type="radio" id="student" name="employment" value="student" required />
+                        <label for="student">Student</label><br />
+                        <input type="radio" id="retired" name="employment" value="retired" required />
+                        <label for="retired">Retired</label><br />
+                        <p>Do you have any history taking care of aggressive dogs?</p>
+                        <input type="radio" id="aggression_yes" name="aggression" value="yes" required />
+                        <label for="aggression_yes">Yes</label><br />
+                        <input type="radio" id="aggression_no" name="aggression" value="no" required />
+                        <label for="aggression_no">No</label><br />
+                        <p>Do you have any history taking care of elderly dogs?</p>
+                        <input type="radio" id="elderly_yes" name="elderly" value="yes" required />
+                        <label for="elderly_yes">Yes</label><br />
+                        <input type="radio" id="elderly_no" name="elderly" value="no" required />
+                        <label for="elderly_no">No</label><br />
+                        <p>Would you be able to take care of a critically ill dog?</p>
+                        <input type="radio" id="sick_yes" name="sick" value="yes" required />
+                        <label for="sick_yes">Yes</label><br />
+                        <input type="radio" id="sick_no" name="sick" value="no" required />
+                        <label for="sick_no">No</label><br />
+                        <p>Do you consent to a home visit for the adoption
+                            process?</p>
+                        <input type="radio" id="consent_yes" name="consent" value="yes" required />
+                        <label for="consent_yes">Yes</label><br />
+                        <input type="radio" id="consent_no" name="consent" value="no" required />
+                        <label for="consent_no">No</label><br />
+                        <p>Do you consent to a background check for the
+                            adoption
+                            process?</p>
+                        <input type="radio" id="consent_background-check_yes" name="consent_background-check"
+                            value="yes" required />
+                        <label for="consent_background-check_yes">Yes</label><br />
+                        <input type="radio" id="consent_background-check_no" name="consent_background-check" value="no"
+                            required />
+                        <label for="consent_background-check_no">No</label><br />
+                        <label for="reason">Why do you want to adopt a dog?</label><br />
+                        <textarea id="reason" name="reason" cols="40" rows="4" required
+                            placeholder="I have always loved dogs and want to provide a loving home for one in need."></textarea><br />
+                    </fieldset>
+                    <fieldset class="adoption-details">
+                        <legend class="form-legend">Dogs Available for Adoption</legend>
+                        <p>Please select the dog(s) you are interested in adopting:</p>
+                        <input type="checkbox" id="dog1" name="dog1" value="bella" />
+                        <label for="dog1">Bella</label><br />
+                        <input type="checkbox" id="dog2" name="dog2" value="charlie" />
+                        <label for="dog2">Charlie</label><br />
+                        <input type="checkbox" id="dog3" name="dog3" value="luna_max" />
+                        <label for="dog3">Luna and Max</label><br />
+                        <input type="checkbox" id="dog4" name="dog4" value="rocky" />
+                        <label for="dog4">Rocky</label><br />
+                        <input type="checkbox" id="dog5" name="dog5" value="daisy" />
+                        <label for="dog5">Daisy</label><br />
+                        <input type="checkbox" id="dog6" name="dog6" value="becky" />
+                        <label for="dog6">Becky</label><br />
+                        <p class="form-message" id="formMessage" aria-live="polite"></p>
+                        <button type="submit" class="btn">Submit</button>
+                        <button type="button" class="btn cancel close-form-button">Close</button>
+
+                    </fieldset>
+                </form>
             </div>
         </main>
     </div>
     <div data-include="../components/footer.html"></div>
     <script src="../scripts/HTMLInclude.min.js"></script>
+    <script src="../scripts/adopt.js"></script>
+
 </body>
 
 </html>

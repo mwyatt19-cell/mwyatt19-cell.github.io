@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+.open-button,
+.btn {
+  box-sizing: border-box;
+  background-color: #155d27;
+  color: #fff0e0;
+  padding: 4px;
+  margin: 4px;
+  border: 2px solid #170000;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 75%;
+  font: inherit;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  padding: 2rem 1rem;
+  background: rgb(34 21 16 / 45%);
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.form-container {
+  box-sizing: border-box;
+  width: 75vw;
+  padding: 1.5rem;
+  background-color: #fdf0d5;
+  border: 2px solid #170000;
+  border-radius: 4px;
+  color: #221510;
+  font-size: 1.1em;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 4px;
+  border: 2px solid #170000;
+  border-radius: 4px;
+  background: white;
+  font: inherit;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="tel"]:focus,
+.form-container textarea:focus {
+  background-color: rgb(218 216 216);
+  outline: none;
+}
+
+.form-container input[type="radio"],
+.form-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #155d27;
+  vertical-align: middle;
+}
+
+.form-container fieldset {
+  margin: 4px;
+  border: 2px solid #155d27;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.form-container .cancel {
+  background-color: #da2c38;
+  color: white;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+  background-color: #083212;
+}
+
+.form-container .cancel:hover {
+  background-color: #b11f2a;
+}
+
+.form-message {
+  min-height: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: #221510;
+  font-size: 0.95rem;
+}
