@@ -208,13 +208,33 @@ clearBtn.addEventListener("click", () => {
 
   if (!confirmClear) return;
 
-  // 1. Reset normal form fields
+  // Clear all input values and remove placeholders
+  const allInputs = form.querySelectorAll("input, textarea, select");
+  allInputs.forEach((input) => {
+    input.value = "";
+    if (input.hasAttribute("placeholder")) {
+      input.removeAttribute("placeholder");
+    }
+    if (input.hasAttribute("data-default")) {
+      input.removeAttribute("data-default");
+    }
+  });
+
+  // Clear ALL courses
+  coursesContainer.innerHTML = "";
+});
+
+// ===============================
+// RESET BUTTON
+// ===============================
+const resetBtn = document.getElementById("reset-btn");
+
+resetBtn.addEventListener("click", () => {
+  // Reset form to initial values, keeping placeholders and data-default
   form.reset();
 
-  // 2. Clear ALL courses
+  // Clear courses and rebuild from initial data
   coursesContainer.innerHTML = "";
-
-  // 3. Rebuild courses from original data
   coursesData.forEach((courseData, index) => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
