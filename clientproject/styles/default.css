@@ -13,7 +13,9 @@ header {
   background-color: #f4d79c;
   display: flex;
 }
-
+.footer-img {
+  height: 10vh;
+}
 .Primary-Menu {
   display: flex;
   justify-content: flex-start;
